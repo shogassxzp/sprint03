@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var buttonMinus: UIButton!
     @IBOutlet weak var buttonPlus: UIButton!
     @IBOutlet weak var countView: UILabel!
     override func viewDidLoad() {
