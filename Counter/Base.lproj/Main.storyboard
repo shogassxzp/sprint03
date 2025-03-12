@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text=" 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-mg-fLX">
-                                <rect key="frame" x="23" y="255" width="354" height="127"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zjE-xy-xG4">
                                 <rect key="frame" x="227" y="601" width="150" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,7 +41,7 @@
                                     <action selector="resetCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ao0-ba-PL3"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" editable="NO" text="История изменений:" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05z-X4-U6j">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" editable="NO" text="История изменений:" textAlignment="natural" selectable="NO" layoutManager="textKit1" translatesAutoresizingMaskIntoConstraints="NO" id="05z-X4-U6j">
                                 <rect key="frame" x="177" y="92" width="200" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,13 +61,16 @@
                                     <action selector="countMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oan-uX-uAV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-mg-fLX">
+                                <rect key="frame" x="16" y="243" width="361" height="127"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="120"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oqx-mg-fLX" secondAttribute="trailing" constant="16" id="29O-7L-KCf"/>
-                            <constraint firstItem="oqx-mg-fLX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="23" id="Aov-US-sVS"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonMinus" destination="iwU-r8-fQS" id="qc7-Rb-v9x"/>
