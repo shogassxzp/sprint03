@@ -6,43 +6,47 @@
 //
 import Foundation
 import UIKit
-class ViewController: UIViewController {
-
+final class ViewController: UIViewController, UITextViewDelegate {
+    
     
     @IBOutlet private weak var historyTextView: UITextView!
-    @IBOutlet weak var buttonMinus: UIButton!
-    @IBOutlet weak var buttonPlus: UIButton!
-    @IBOutlet weak var resetCountButton: UIButton!
-    @IBOutlet weak var countView: UILabel!
+    @IBOutlet private weak var minusButton: UIButton!
+    @IBOutlet private weak var plusButton: UIButton!
+    @IBOutlet private weak var resetCountButton: UIButton!
+    @IBOutlet private weak var countLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    func formatDate() -> String{
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "dd.MM HH:mm"
-    let dateAndTime = dateFormatter.string(from: Date())
-        return dateAndTime
+        historyTextView.delegate = self
     }
     private var count: Int = 0
-    @IBAction func countPlusOne(_ sender: Any) {count += 1
-        countView.text = String(count)
-        historyTextView.text += "\n \(formatDate()) Значение увеличено на 1"
+    private func formatDate() -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM HH:mm"
+        let dateAndTime = dateFormatter.string(from: Date())
+        return dateAndTime
+    }
+    @IBAction private func countPlus(_ sender: Any) {count += 1
+        countLabel.text = String(count)
+        historyTextView.text += "\n \(formatDate()) Значение изменено на +1"
     }
     
-    @IBAction func countMinusOne(_ sender: Any) {count -= 1
+    @IBAction private func countMinus(_ sender: Any) {count -= 1
         if count < 0 {
             historyTextView.text += "\n \(formatDate()) Попытка уменьшить значение счётчика ниже 0"
             count = 0
         } else {
-            historyTextView.text += "\n \(formatDate()) Значение уменьшено на 1"
-            countView.text = String(count)
+            historyTextView.text += "\n \(formatDate()) Значение изменено на -1"
+            countLabel.text = String(count)
         }
     }
-   
-    @IBAction func resetCount(_ sender: Any) {count = 0
-        countView.text = String(count)
+    
+    @IBAction private func resetCount(_ sender: Any) {count = 0
+        countLabel.text = String(count)
         historyTextView.text += "\n \(formatDate()) Значение сброшено"
+    }
+    func textViewDidChange(_ textView: UITextView) {
+        let range = NSRange(location: historyTextView.text.count - 1, length: 1)
+        historyTextView.scrollRangeToVisible(range)
     }
     
     
