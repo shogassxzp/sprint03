@@ -40,6 +40,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		1F12382E2D86A35000C91A17 /* Resources */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1F7B326E2D814AFA00A8EC04 /* Counter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -88,6 +93,7 @@
 		1F7B32632D814AFA00A8EC04 = {
 			isa = PBXGroup;
 			children = (
+				1F12382E2D86A35000C91A17 /* Resources */,
 				1F7B326E2D814AFA00A8EC04 /* Counter */,
 				1F7B32852D814AFC00A8EC04 /* CounterTests */,
 				1F7B328F2D814AFC00A8EC04 /* CounterUITests */,
@@ -121,6 +127,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				1F12382E2D86A35000C91A17 /* Resources */,
 				1F7B326E2D814AFA00A8EC04 /* Counter */,
 			);
 			name = Counter;
