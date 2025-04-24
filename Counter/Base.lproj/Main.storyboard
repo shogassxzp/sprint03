@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -26,7 +26,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="countPlusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2wy-90-hDS"/>
+                                    <action selector="countPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e9N-Ov-2PO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tmc-zO-qJD">
@@ -38,10 +38,10 @@
                                     <color key="baseBackgroundColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="resetCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ao0-ba-PL3"/>
+                                    <action selector="resetCount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xWQ-98-dfw"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" editable="NO" text="История изменений:" textAlignment="natural" selectable="NO" layoutManager="textKit1" translatesAutoresizingMaskIntoConstraints="NO" id="05z-X4-U6j">
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" contentInsetAdjustmentBehavior="always" editable="NO" text=" История изменений:" textAlignment="natural" selectable="NO" layoutManager="textKit1" translatesAutoresizingMaskIntoConstraints="NO" id="05z-X4-U6j">
                                 <rect key="frame" x="177" y="92" width="200" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,7 +58,7 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="countMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oan-uX-uAV"/>
+                                    <action selector="countMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="npL-km-oyK"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqx-mg-fLX">
@@ -73,11 +73,11 @@
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="buttonMinus" destination="iwU-r8-fQS" id="qc7-Rb-v9x"/>
-                        <outlet property="buttonPlus" destination="zjE-xy-xG4" id="oxt-xk-dDt"/>
-                        <outlet property="countView" destination="oqx-mg-fLX" id="p8l-1r-Cff"/>
+                        <outlet property="countLabel" destination="oqx-mg-fLX" id="tI8-Zo-Aye"/>
                         <outlet property="historyTextView" destination="05z-X4-U6j" id="ER9-Of-glg"/>
-                        <outlet property="resetCountButton" destination="Tmc-zO-qJD" id="PkP-IR-dQ9"/>
+                        <outlet property="minusButton" destination="iwU-r8-fQS" id="f7v-Em-fKZ"/>
+                        <outlet property="plusButton" destination="zjE-xy-xG4" id="Jvs-sM-6Oq"/>
+                        <outlet property="resetCountButton" destination="Tmc-zO-qJD" id="2gS-pK-51e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -93,7 +93,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
